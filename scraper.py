@@ -34,7 +34,10 @@ def getJpWord(item):
 def getPrc(item):
     prc = item.find('span', class_="transliteration")
     if prc is not None:
-        return prc.text
+        prcText = prc.text
+        prcText = prcText[1:len(prcText)-1]
+        
+        return prcText
     return " "
 
 def getMeaning(item):
